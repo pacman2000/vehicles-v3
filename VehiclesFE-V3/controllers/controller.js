@@ -21,6 +21,7 @@ function addWheel() {
     var wBrand;
     var wDiameter;
     var wheels = new Array();
+    var car;
     for (var i = 1; i <= 4; i++) {
         wBrand = document.getElementById("brandWheel" + i).value.toUpperCase();
         wDiameter = Number(document.getElementById("diameterWheel" + i).value);
@@ -30,18 +31,7 @@ function addWheel() {
         if (validateWDiameter(wDiameter, i) == true) {
             wheels.push(wDiameter);
         }
-    }
-    if ((wheels.length < 8)) {
-        document.getElementById("wheelError").innerHTML = "Please, complete all the fiels correctly";
-    }
-    else {
-        var lastPos = carArray.length - 1;
-        var car = carArray[lastPos];
-        car.addWheel(wheels);
-        document.getElementById("messageWheel").innerHTML = "<br>WHEELS\n        <br><br><b>Wheel 1:</b>\n        <br>Brand: " + wheels[0] + " \n        <br>Diameter:  " + wheels[1] + " \n        <br><br><b>Wheel 2:</b>\n        <br>Brand:  " + wheels[2] + " \n        <br>Diameter:  " + wheels[3] + " \n        <br><br><b>Wheel 3:</b>\n        <br>Brand:  " + wheels[4] + " \n        <br>Diameter:  " + wheels[5] + " \n        <br><br><b>Wheel 4:</b>\n        <br>Brand:  " + wheels[6] + " \n        <br>Diameter:  " + wheels[7] + " ";
-        document.getElementById("sectionB1").style.display = "block";
-        document.getElementById("sectionB2").style.display = "none";
-        cleanWheelForm();
+        newCar.addWheel(new Wheel(wBrand, wDiameter));
     }
     // revise the result /////////////////////
     console.log("wheels: " + wheels);
