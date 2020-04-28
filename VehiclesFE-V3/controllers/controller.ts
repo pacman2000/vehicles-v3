@@ -38,8 +38,8 @@ function addWheel(){
         }
         if (validateWDiameter(wDiameter, i) == true){
             wheels.push(wDiameter);             
-        } 
-        car.addWheel(new Wheel(wBrand,wDiameter));    
+        }         
+        newCar.addWheel(new Wheel(wBrand,wDiameter));
     } 
     // revise the result /////////////////////
     console.log("wheels: " + wheels);
