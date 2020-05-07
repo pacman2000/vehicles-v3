@@ -16,11 +16,12 @@ function createCar(plate, brand, color) {
         document.getElementById("sectionB1").style.display = "none";
         cleanCarForm();
     }
+    console.log(newCar);
 }
 function addWheel() {
     var wBrand;
     var wDiameter;
-    var wheels = new Array();
+    var wheels = new Array(4);
     var car;
     for (var i = 1; i <= 4; i++) {
         wBrand = document.getElementById("brandWheel" + i).value.toUpperCase();

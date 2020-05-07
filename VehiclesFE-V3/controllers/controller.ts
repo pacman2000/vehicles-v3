@@ -21,12 +21,14 @@ function createCar(plate: string, brand: string, color: string){
         (<HTMLInputElement>document.getElementById("sectionB2")).style.display = "block";     
         (<HTMLInputElement>document.getElementById("sectionB1")).style.display = "none";   
         cleanCarForm();
-    }        
+    }   
+    console.log(newCar);
+         
 }
 function addWheel(){   
     let wBrand: string;
     let wDiameter: number;
-    let wheels: any[] = new Array();       
+    let wheels: any[] = new Array(4);       
     let car: any;     
     
     for (let i:number = 1; i <= 4; i++)  {      
@@ -38,9 +40,11 @@ function addWheel(){
         }
         if (validateWDiameter(wDiameter, i) == true){
             wheels.push(wDiameter);             
-        }         
+        }                 
         newCar.addWheel(new Wheel(wBrand,wDiameter));
+        
     } 
+    
     // revise the result /////////////////////
     console.log("wheels: " + wheels);
     console.log(carArray);           
